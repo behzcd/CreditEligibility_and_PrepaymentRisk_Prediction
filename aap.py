@@ -25,7 +25,7 @@ def preprocess_input(data):
 
     label_encoder = LabelEncoder()
 
-    for column in ['FirstTImeHomeBuyer', 'Occupancy', 'Channel', 'PPM', 'PropertyState',
+    for column in ['FirstTimeHomebuyer', 'Occupancy', 'Channel', 'PPM', 'PropertyState',
                    'PropertyType', 'LoanPurpose', 'NumBorrowers']:
         if column in data:
             data[column] = label_encoder.fit_transform(data[column])[0]
@@ -74,9 +74,7 @@ def main():
         """
         <style>
         body {
-            background-image: url('https://www.imd.org/finance/bf/online-finance-course/');
-            background-repeat: no-repeat;
-            background-attachment: fixed;
+            background-image: url('file:///C:/Users/Bekhzod/OneDrive/Ishchi stol/Bek _ portfolio/CreditEligibility_and_PrepaymentRisk_Pred/pic.jpg');
             background-size: cover;
         }
         </style>
@@ -91,7 +89,7 @@ def main():
     
     # Example input fields (replace with your own input fields)
     user_input['CreditScore'] = st.number_input("Credit Score", min_value=0, max_value=1000, step=1)
-    user_input['FirstTImeHomeBuyer'] = st.selectbox("First Time Home Buyer?", ['Y', 'N'])
+    user_input['FirstTimeHomebuyer'] = st.selectbox("First Time Home Buyer?", ['Y', 'N'])
     user_input['MIP'] = st.number_input("MIP", min_value=0, max_value=100, step=1)
     user_input['Units'] = st.number_input("Units", min_value=0, max_value=4, step=1)
     user_input['Occupancy'] = st.selectbox("Occupancy", ['O', 'I', 'S'])
