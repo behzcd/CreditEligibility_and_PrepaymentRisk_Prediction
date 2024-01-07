@@ -130,7 +130,7 @@ def main(img):
         if classification_result == 0:
             st.markdown("<p style='font-size: 30px; text-align: center; color: green;' class='output'>Congratulations! You are eligible to get the credit.</p>", unsafe_allow_html=True)
             regression_result = abs(int(predict_regression(user_input)))
-            st.markdown(f"<p style='font-size: 30px; text-align: center;' class='output'>The prepayment risk is: {regression_result}</p>", unsafe_allow_html=True)
+            st.markdown(f"<p style='font-size: 30px; text-align: center;' class='output'>The prepayment risk is: {regression_result}%</p>", unsafe_allow_html=True)
         else:
             st.markdown("<p style='font-size: 30px; text-align: center; color: red;' class='output'>Sorry, you are not eligible to get the credit.</p>", unsafe_allow_html=True)
         
