@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import base64
 import pickle
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import LabelEncoder
@@ -68,16 +69,23 @@ def predict_regression(data):
     return predictions[0]
 
 # Streamlit app
-def main():
+
+def get_img_as_base64(file):
+    with open(file, "rb") as f:
+        data = f.read()
+    return base64.b64encode(data).decode()
+
+img = get_img_as_base64("pict.jpg")
+
+def main(img):
     # Add custom CSS to set the background image
     st.markdown(
-        """
+        f"""
         <style>
-        [data-testid="stAppViewContainer"]{
-        background-color: #e5e5f7;
-        opacity: 0.8;
-        background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #e5e5f7 10px ), repeating-linear-gradient( #444cf755, #444cf7 );
-        }
+        [data-testid="stAppViewContainer"]{{
+        background-image: url('data:image/png;base64,{img}');
+        background-size: cover;
+        }}
         </style>
         """,
         unsafe_allow_html=True
@@ -129,4 +137,4 @@ def main():
     
 # Run the app
 if __name__ == '__main__':
-    main()
+    main(img)
