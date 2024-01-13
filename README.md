@@ -7,3 +7,6 @@ This type of predictive modelling contributes to the broader field of risk asses
 
 
 Just Check out the app: https://crediteligibilityandprepaymentriskprediction-l9e9d9anqh.streamlit.app/
+
+
+![performance](https://github.com/behzcd/CreditEligibility_and_PrepaymentRisk_Prediction/assets/114143258/a57873fd-68f4-49ae-a87d-e7e380ec7159)
